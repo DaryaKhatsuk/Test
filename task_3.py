@@ -32,7 +32,10 @@ def function(day, month, year):
             return "Month is cannot"
         date = datetime.date(year, m, day)
         next_date = date + datetime.timedelta(days=1)
-        return f"{next_date.day}.{next_date.month}.{next_date.year}"
+        for j, i in months.items():
+            if next_date.month == i:
+                m = j
+                return f"{next_date.day} {m} {next_date.year}"
     else:
         return 'Data entered incorrectly'
 
