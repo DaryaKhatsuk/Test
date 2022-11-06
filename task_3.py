@@ -7,7 +7,7 @@ import datetime
 # дату 1 января 2020-го. Дату пользователь должен вводить в три этапа: год, месяц и день.
 # Убедитесь, что ваша программа корректно обрабатывает високосные годы.
 
-months = {
+months = {    # использовала словарь, что бы упорядочить повторяющиеся схожие по смыслу данные
     'january': 1,
     'february': 2,
     'march': 3,
@@ -24,18 +24,21 @@ months = {
 
 
 def function(day, month, year):
+    """
+    Отфильтровала дни и года в минимальных базовых рамках нашей текущей реальности
+    """
     if 1 <= day <= 31 and 1 <= len(str(year)) <= 4:
-        m = month.lower()
+        m = month.lower()   # определила нижний регистр, что бы словарь не принял May за неверное значение
         if m in months:
-            m = months.get(m)
+            m = months.get(m)   # достала из словаря значение по ключу
         else:
             return "Month is cannot"
-        date = datetime.date(year, m, day)
-        next_date = date + datetime.timedelta(days=1)
-        for j, i in months.items():
+        date = datetime.date(year, m, day)  # когда убедилась что пользователь ввел все верно, передала в datetime
+        next_date = date + datetime.timedelta(days=1)   # добавила один день
+        for j, i in months.items():     # так же я в одном из домашних задания нашла ключ по значению
             if next_date.month == i:
                 m = j
-                return f"{next_date.day} {m} {next_date.year}"
+                return f"{next_date.day} {m} {next_date.year}"  # итоговый вывод в заданном заданием формате
     else:
         return 'Data entered incorrectly'
 

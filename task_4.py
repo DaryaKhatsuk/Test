@@ -4,10 +4,17 @@
 # сумму доставки.
 # В основной программе должны производиться запрос количества позиций в заказе у пользователя и
 # отображаться на экране сумма доставки.
+"""
+Тут тоже не знаю что комментировать
+"""
+
 
 def costs(number):
-    cost = 10.95 + (2.95 * (number - 1))
-    return f'${cost}'
+    if number >= 1:
+        cost = 10.95 + (2.95 * (number - 1))
+        return f'${cost}'
+    else:
+        return 'There are no items in the cart'
 
 
 print(costs(int(input("Number "))))
