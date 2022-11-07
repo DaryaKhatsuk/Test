@@ -35,7 +35,7 @@ def function(day, month, year):
             return "Month is cannot"
         date = datetime.date(year, m, day)  # когда убедилась что пользователь ввел все верно, передала в datetime
         next_date = date + datetime.timedelta(days=1)   # добавила один день
-        for j, i in months.items():     # так же я в одном из домашних задания нашла ключ по значению
+        for j, i in months.items():     # нашла ключ по значению
             if next_date.month == i:
                 m = j
                 return f"{next_date.day} {m} {next_date.year}"  # итоговый вывод в заданном заданием формате
