@@ -3,7 +3,7 @@
 # а в русском – «выбор» и «обрыв». Напишите программу, которая будет запрашивать
 # у пользователя два слова, определять, являются ли они анаграммами, и выводить на экран ответ.
 def funct(word1, word2):
-    if lambda: sorted(word1) == sorted(word2):
+    if sorted(word1) == sorted(word2):
         return 'This is anagram'
     else:
         return 'This is not anagram'
