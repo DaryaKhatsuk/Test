@@ -38,7 +38,6 @@ def funct(listN, l1):
                     l1.append(j)
                 else:
                     funct(j, l1)
-
     return l1
 
 
